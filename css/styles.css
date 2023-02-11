@@ -739,7 +739,6 @@ textarea {
   padding: 40px;
 
   width: 528px;
-  height: 581px;
   background-color: var(--back-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
     0px 2px 1px rgba(0, 0, 0, 0.2);
@@ -755,6 +754,7 @@ textarea {
 }
 
 .modal-close {
+  outline: transparent;
   transition: fill var(--animation-orinary) var(--cubic-ordinary);
 }
 
@@ -913,12 +913,14 @@ textarea {
 
 .checkbox-wrap {
   position: relative;
+  display: inline-flex;
 }
 
 .checkbox-icon {
   position: absolute;
-  top: 4px;
-  left: 3px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .modal-button {
