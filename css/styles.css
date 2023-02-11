@@ -368,14 +368,17 @@ textarea {
   padding: 6px 22px;
   border-radius: 4px;
 
-  transition: color var(--animation-orinary) var(--cubic-ordinary);
+  transition: color var(--animation-orinary) var(--cubic-ordinary),
+    background-color var(--animation-orinary) var(--cubic-ordinary),
+    box-shadow var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .buttons .btn:hover,
 .buttons .btn:focus {
   color: var(--back-color);
   background-color: var(--accent-color);
-  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 .buttons {
@@ -583,7 +586,7 @@ textarea {
 }
 
 .decoration:hover .overlay,
-.bdecoration:focus .overlay {
+.decoration:focus .overlay {
   transform: translateY(0);
 }
 
@@ -825,11 +828,85 @@ textarea {
 
 .modal-label > textarea {
   padding: 12px 16px;
+  width: 100%;
+  height: 120px;
+  margin-bottom: 20px;
 }
 
 .modal-icon {
   position: absolute;
-  /* 
+  left: 12px;
   top: 50%;
-  transform: translateY(-50%); */
+  z-index: 10;
+}
+
+.modal-label > input:hover,
+.modal-label > input:focus {
+  outline: transparent;
+  border-color: var(--accent-color);
+}
+
+.modal-label > input:hover + .modal-icon,
+.modal-label > input:focus + .modal-icon {
+  fill: var(--accent-color);
+}
+
+.modal-label > textarea:hover,
+.modal-label > textarea:focus {
+  outline: transparent;
+  border-color: var(--accent-color);
+}
+
+.modal-form-agreement {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 7px;
+}
+
+.modal-form-checkbox {
+  appearance: none;
+  width: 16px;
+  height: 15px;
+  color: var(--primary-text-color);
+
+  border: 2px solid;
+  border-radius: 2px;
+  cursor: pointer;
+}
+
+.modal-form-checkbox:checked {
+  border-color: var(--accent-color);
+  background-color: var(--accent-color);
+}
+
+.modal-form-descr {
+  color: var(--ordinary-text-color);
+  font-size: 14px;
+  line-height: calc(24 / 14);
+  letter-spacing: 0.03em;
+}
+
+.modal-form-link {
+  color: var(--accent-color);
+  text-decoration: underline;
+}
+
+.checkbox-wrap {
+  position: relative;
+}
+
+.checkbox-icon {
+  position: absolute;
+  top: 4px;
+  left: 3px;
+}
+
+.modal-button {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  padding-left: 52px;
+  padding-right: 52px;
 }
