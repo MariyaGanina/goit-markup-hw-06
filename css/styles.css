@@ -250,7 +250,8 @@ textarea {
 }
 
 .feature-list .title,
-.footer-socials .title {
+.footer-socials .title,
+.subscribe .title {
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.03em;
@@ -753,6 +754,15 @@ textarea {
   transform: translateX(-50%) translateY(-50%);
 }
 
+.modal-close {
+  transition: fill var(--animation-orinary) var(--cubic-ordinary);
+}
+
+.modal-close:hover,
+.modal-close:focus {
+  fill: var(--accent-color);
+}
+
 .modal-btn {
   position: absolute;
   top: 8px;
@@ -769,10 +779,6 @@ textarea {
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 50%;
   background-color: transparent;
-}
-
-/* draft */
-.modal-form {
 }
 
 .modal-title {
@@ -809,6 +815,9 @@ textarea {
   padding-bottom: 10px;
   padding-left: 34px;
   padding-right: 4px;
+
+  transition: border-color var(--animation-orinary) var(--cubic-ordinary),
+    fill var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .modal-comment {
@@ -831,6 +840,8 @@ textarea {
   width: 100%;
   height: 120px;
   margin-bottom: 20px;
+
+  transition: border-color var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .modal-icon {
@@ -838,6 +849,8 @@ textarea {
   left: 12px;
   top: 50%;
   z-index: 10;
+
+  transition: fill var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .modal-label > input:hover,
@@ -873,11 +886,17 @@ textarea {
   border: 2px solid;
   border-radius: 2px;
   cursor: pointer;
+
+  transition: color var(--animation-orinary) var(--cubic-ordinary),
+    background-color var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .modal-form-checkbox:checked {
   border-color: var(--accent-color);
   background-color: var(--accent-color);
+
+  transition: border-color var(--animation-orinary) var(--cubic-ordinary),
+    background-color var(--animation-orinary) var(--cubic-ordinary);
 }
 
 .modal-form-descr {
@@ -909,4 +928,48 @@ textarea {
   margin-top: 20px;
   padding-left: 52px;
   padding-right: 52px;
+}
+
+/* Підписатися */
+
+.subscribe {
+  margin-left: auto;
+}
+
+.subscribe-button {
+  position: relative;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 28px;
+  padding-right: 62px;
+}
+
+.subscribe-icon {
+  position: absolute;
+  top: 13px;
+  left: 148px;
+}
+
+.email-line {
+  padding: 15px 16px;
+  outline: transparent;
+  background-color: var(--back-section-color);
+
+  width: 358px;
+  height: 50px;
+
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
+  border-radius: 4px;
+
+  margin-right: 12px;
+
+  transition: border-color var(--animation-orinary) var(--cubic-ordinary);
+}
+
+.email-line:hover,
+.email-line:focus {
+  border-color: var(--accent-color);
+  outline: 1px solid transparent;
+  color: rgba(255, 255, 255, 0.6);
 }
